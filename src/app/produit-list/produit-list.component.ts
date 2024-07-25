@@ -1,8 +1,8 @@
-import { Component, EventEmitter, OnInit, Output  } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ProduitDetailComponent } from '../produits/produit-detail/produit-detail.component';
 
-
-interface Produit {
+export interface Produit {
   id: number;
   nom: string;
   description: string;
@@ -13,13 +13,11 @@ interface Produit {
 @Component({
   selector: 'app-produit-list',
   standalone: true,
-  imports: [CommonModule],
+  imports: [ ProduitDetailComponent, CommonModule],
   templateUrl: './produit-list.component.html',
-  styleUrl: './produit-list.component.css'
+  styleUrls: ['./produit-list.component.css']
 })
-
-
-export class ProduitListComponent implements OnInit {
+export class ProduitListComponent   {
   produits: Produit[] = [
     { id: 1, nom: 'Produit 1', description: 'Description 1', prix: 100, dateAjout: new Date() },
     { id: 2, nom: 'Produit 2', description: 'Description 2', prix: 200, dateAjout: new Date() },
@@ -31,8 +29,6 @@ export class ProduitListComponent implements OnInit {
   onSelect(produit: Produit): void {
     this.produitSelectionne.emit(produit);
   }
+  
 
-  ngOnInit(): void {
-
-  }
 }

@@ -1,0 +1,8 @@
+<div *ngIf="produit" class="card mt-3">
+  <div class="card-body">
+    <h5 class="card-title">{{ produit.nom | uppercase }}</h5> <!-- Pipe pour mettre en majuscule -->
+    <p class="card-text">{{ produit.description }}</p>
+    <p class="card-text">{{ produit.prix | currency:'EUR':'symbol':'1.2-2' }}</p> <!-- Pipe pour formater le prix -->
+    <p class="card-text"><small>{{ produit.dateAjout | date:'fullDate' }}</small></p> <!-- Pipe pour la date -->
+  </div>
+</div>
