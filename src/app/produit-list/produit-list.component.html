@@ -1,0 +1,13 @@
+<div class="row">
+    <div *ngFor="let produit of produits" class="col-md-4">
+      <div class="card" (click)="onSelect(produit)">
+        <div class="card-body">
+          <h5 class="card-title">{{ produit.nom }}</h5>
+          <p class="card-text">{{ produit.description }}</p>
+          <p class="card-text">{{ produit.prix  }}</p>
+          <p class="card-text"><small>{{ produit.dateAjout  }}</small></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
