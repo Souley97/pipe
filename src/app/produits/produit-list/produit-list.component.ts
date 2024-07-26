@@ -19,8 +19,8 @@ export interface Produit {
 })
 export class ProduitListComponent   {
   produits: Produit[] = [
-    { id: 1, titre: 'Produit 1', description: 'Description 1', prix: 100, dateAjout: new Date() },
-    { id: 2, titre: 'Produit 2', description: 'Description 2', prix: 200, dateAjout: new Date() },
+    { id: 1, titre: 'Baskets en cuir', description: 'Chaussures de skate | Baskets en cuir fabriquées à la main pour homme | Chaussures homme | Baskets en daim | Style urbain', prix: 100, dateAjout: new Date() },
+    { id: 2, titre: 'Punk Grey ', description: "Punk Grey - Chaussures Homme Originales en Chanvre ", prix: 200, dateAjout: new Date() },
     // Autres produits...
   ];
 
