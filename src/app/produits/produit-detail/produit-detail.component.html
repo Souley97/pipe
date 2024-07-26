@@ -1,8 +1,18 @@
-<div *ngIf="produit" class="card mt-3">
-  <div class="card-body">
-    <h5 class="card-title">{{ produit.nom | uppercase }}</h5> <!-- Pipe pour mettre en majuscule -->
-    <p class="card-text">{{ produit.description }}</p>
-    <p class="card-text">{{ produit.prix | currency:'EUR':'symbol':'1.2-2' }}</p> <!-- Pipe pour formater le prix -->
-    <p class="card-text"><small>{{ produit.dateAjout | date:'fullDate' }}</small></p> <!-- Pipe pour la date -->
+<div *ngIf="produit" class="fixed z-50 inset-0 bg-gray-900 bg-opacity-60 flex items-center justify-center">
+  <div class="bg-white rounded-lg shadow-lg overflow-hidden max-w-md w-full">
+    <div class="p-4 flex justify-between items-center">
+      <h2 class="text-lg font-semibold">{{ produit.titre | uppercase }}</h2>
+      <button (click)="closeModal()" class="text-gray-400 hover:text-gray-600">
+        
+        <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+    </div>
+    <div class="p-4">
+      <p>{{ produit.description }}</p>
+      <p>{{ produit.prix | currency:'EUR' }}</p>
+      <p>Date d'ajout : {{ produit.dateAjout | date }}</p>
+    </div>
   </div>
 </div>

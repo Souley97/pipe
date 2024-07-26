@@ -1,10 +1,10 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ProduitDetailComponent } from '../produits/produit-detail/produit-detail.component';
+import { ProduitDetailComponent } from '../produit-detail/produit-detail.component';
 
 export interface Produit {
   id: number;
-  nom: string;
+  titre: string;
   description: string;
   prix: number;
   dateAjout: Date;
@@ -19,16 +19,17 @@ export interface Produit {
 })
 export class ProduitListComponent   {
   produits: Produit[] = [
-    { id: 1, nom: 'Produit 1', description: 'Description 1', prix: 100, dateAjout: new Date() },
-    { id: 2, nom: 'Produit 2', description: 'Description 2', prix: 200, dateAjout: new Date() },
+    { id: 1, titre: 'Produit 1', description: 'Description 1', prix: 100, dateAjout: new Date() },
+    { id: 2, titre: 'Produit 2', description: 'Description 2', prix: 200, dateAjout: new Date() },
     // Autres produits...
   ];
 
-  @Output() produitSelectionne = new EventEmitter<Produit>();
+selectedProduit?: Produit;
 
-  onSelect(produit: Produit): void {
-    this.produitSelectionne.emit(produit);
-  }
-  
+onSelect(produit: Produit): void {
+  this.selectedProduit = produit;
+}
+
+
 
 }

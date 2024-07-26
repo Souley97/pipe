@@ -1,5 +1,5 @@
 import { Component, Input  } from '@angular/core';
-import { Produit } from './../../produit-list/produit-list.component';
+import { Produit } from '../produit-list/produit-list.component';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -12,5 +12,14 @@ import { CommonModule } from '@angular/common';
 export class ProduitDetailComponent {
   @Input() produit?: Produit;
 
+  
+    // FERME MODAL
+    closeModal(): void {
+    this.produit = undefined;
+  }
+
+  //et fermer le modal
+  
+  
 
 }
